@@ -1,0 +1,43 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: movie-service
+          uri: lb://movie-service
+          #uri: http://localhost:8065
+          predicates:
+            - Path=/movie-service/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-response-header, custom-user-response-header
+            - LogFilter=Checkpoint 1 de Backend 2, by Antonela Dutruel, auspiciado por Pedro y Ezequiel :P, of course!
+        - id: catalog-service
+          uri: lb://catalog-service
+          #uri: http://localhost:8065
+          predicates:
+            - Path=/catalog-service/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-response-header, custom-user-response-header
+            - LogFilter=Checkpoint 1 de Backend 2, by Antonela Dutruel, auspiciado por Pedro y Ezequiel :P, of course!
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true

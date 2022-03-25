@@ -1,0 +1,15 @@
+server:
+  port: 8761
+
+eureka:
+  server:
+    enable-self-preservation: false
+    #enable-self-preserve lo sugiere el autocorrector pero no funciona
+  client:
+    fetchRegistry: false
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+      #{eureka.instance.hostname}
+  instance:
+    preferIpAddress: true
