@@ -8,7 +8,7 @@ spring:
           #uri: lb://movie-service
           uri: http://localhost:8083
           predicates:
-            - Path=/movie-service/**
+            - Path=/movies/**
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-response-header, custom-user-response-header
@@ -17,7 +17,7 @@ spring:
           #uri: lb://catalog-service
           uri: http://localhost:8081
           predicates:
-            - Path=/catalog-service/**
+            - Path=/catalog/**
           filters:
             - AddRequestHeader=user-request-header, custom-user-request-header
             - AddResponseHeader=user-response-header, custom-user-response-header
