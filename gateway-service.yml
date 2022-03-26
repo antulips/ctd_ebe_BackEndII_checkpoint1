@@ -5,8 +5,8 @@ spring:
     gateway:
       routes:
         - id: movie-service
-          uri: lb://movie-service
-          #uri: http://localhost:8065
+          #uri: lb://movie-service
+          uri: http://localhost:8065
           predicates:
             - Path=/movie-service/**
           filters:
@@ -14,8 +14,8 @@ spring:
             - AddResponseHeader=user-response-header, custom-user-response-header
             - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel
         - id: catalog-service
-          uri: lb://catalog-service
-          #uri: http://localhost:8065
+          #uri: lb://catalog-service
+          uri: http://localhost:8065
           predicates:
             - Path=/catalog-service/**
           filters:
