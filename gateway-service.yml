@@ -6,7 +6,7 @@ spring:
       routes:
         - id: movie-service
           #uri: lb://movie-service
-          uri: http://localhost:8065
+          uri: http://localhost:8083
           predicates:
             - Path=/movie-service/**
           filters:
@@ -15,7 +15,7 @@ spring:
             - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel
         - id: catalog-service
           #uri: lb://catalog-service
-          uri: http://localhost:8065
+          uri: http://localhost:8081
           predicates:
             - Path=/catalog-service/**
           filters:
