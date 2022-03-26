@@ -3,10 +3,6 @@ server:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
       routes:
         - id: movie-service
           uri: lb://movie-service
