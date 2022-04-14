@@ -9,32 +9,33 @@ spring:
           uri: http://localhost:8083
           predicates:
             - Path=/movies/**
-          filters:
-            - AddRequestHeader=user-request-header, custom-user-request-header
-            - AddResponseHeader=user-response-header, custom-user-response-header
-            - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel
         - id: serie-service
           #uri: lb://movie-service
           uri: http://localhost:8087
           predicates:
             - Path=/series/**
-          filters:
-            - AddRequestHeader=user-request-header, custom-user-request-header
-            - AddResponseHeader=user-response-header, custom-user-response-header
-            - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel 
         - id: catalog-service
           #uri: lb://catalog-service
           uri: http://localhost:8081
           predicates:
             - Path=/catalog/**
-          filters:
-            - AddRequestHeader=user-request-header, custom-user-request-header
-            - AddResponseHeader=user-response-header, custom-user-response-header
-            - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel
+          filters:           
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+      default-filters:
+        - AddRequestHeader=user-request-header, custom-user-request-header
+        - AddResponseHeader=user-response-header, custom-user-response-header
+        - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel
+        - TokenRelay
+  security:
+    oauth2:
+      client:
+        registratrion:
+          github:
+            client-id: 5f4f18a5a0c0790bba75
+            client-secret: 0855bf0b915e3c9a0757c06efbf1fa7fcff6ef36
 
 eureka:
   instance:
