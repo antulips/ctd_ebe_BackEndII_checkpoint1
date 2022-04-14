@@ -29,13 +29,13 @@ spring:
         - AddResponseHeader=user-response-header, custom-user-response-header
         - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel
         - TokenRelay
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            client-id: 5f4f18a5a0c0790bba75
-            client-secret: 0855bf0b915e3c9a0757c06efbf1fa7fcff6ef36
+  #security:
+    #oauth2:
+      #client:
+        #registration:
+          #github:
+            #client-id: 5f4f18a5a0c0790bba75
+            #client-secret: 0855bf0b915e3c9a0757c06efbf1fa7fcff6ef36
 
 eureka:
   instance:
