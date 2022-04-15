@@ -10,8 +10,8 @@ spring:
           predicates:
             - Path=/movies/**
         - id: serie-service
-          #uri: lb://movie-service
-          uri: http://localhost:8087
+          #uri: lb://serie-service
+          uri: http://localhost:8098
           predicates:
             - Path=/series/**
         - id: catalog-service
