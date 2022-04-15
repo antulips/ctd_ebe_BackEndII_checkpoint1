@@ -1,6 +1,5 @@
 spring:  
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/movies
     username: root
     password: root
@@ -9,10 +8,13 @@ spring:
     init:
       dataLocations: classpath:/movie-service.sql  
       
-  jpa:  
-    defer-datasource-initialization: true
+  jpa: 
     hibernate:
-      ddlAuto: create-drop
+      ddlAuto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
 
 server:
     port: 8083
