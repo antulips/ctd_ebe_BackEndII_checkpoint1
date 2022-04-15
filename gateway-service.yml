@@ -28,7 +28,7 @@ spring:
         - AddRequestHeader=user-request-header, custom-user-request-header
         - AddResponseHeader=user-response-header, custom-user-response-header
         - LogFilter=Checkpoint I de Backend II, by Antonela Dutruel
-        - TokenRelay
+        #- TokenRelay
   #security:
     #oauth2:
       #client:
