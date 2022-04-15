@@ -10,7 +10,7 @@ spring:
       
   jpa: 
     hibernate:
-      ddlAuto: create
+      ddlAuto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
