@@ -1,9 +1,9 @@
 spring:  
   datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:db/movies;DB_CLOSE_DELAY=-1
-    username: sa
-    password: sa
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/movies
+    username: root
+    password: root
   
   sql:
     init:
