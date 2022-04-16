@@ -42,8 +42,8 @@ resilience4j:
       catalog:
         waitDuration: 1000
         maxAttempts: 3
-        #retryExceptions:
-          #- feign.FeignException$InternalServerError
+        retryExceptions:
+          - feign.FeignException$InternalServerError
 
 info:
   app:
