@@ -10,6 +10,5 @@ eureka:
     registerWithEureka: false
     serviceUrl:
       defaultZone: http://localhost:${server.port}/eureka/
-      #{eureka.instance.hostname}
   instance:
     preferIpAddress: true
