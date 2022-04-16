@@ -1,3 +1,6 @@
+server:
+    port: 8083
+
 spring:  
   datasource:
     url: jdbc:mysql://localhost:3306/movies
@@ -16,16 +19,9 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
     show-sql: true
 
-server:
-    port: 8083
-
 eureka:
   client:
-    fetchRegistry: true
-    registerWithEureka: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
   instance:
     preferIpAddress: true
-    id: ${spring.cloud.client.ip-address}:${server.port}
-    hostname: ${spring.cloud.client.ip-address}
