@@ -28,4 +28,4 @@ eureka:
   instance:
     preferIpAddress: true
     id: ${spring.cloud.client.ip-address}:${server.port}
-    hostname: ${spring.cloud.client.ipAddress}
+    hostname: ${spring.cloud.client.ip-address}
