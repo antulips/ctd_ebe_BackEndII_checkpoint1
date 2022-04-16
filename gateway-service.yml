@@ -36,6 +36,9 @@ spring:
           #github:
             #client-id: 5f4f18a5a0c0790bba75
             #client-secret: 0855bf0b915e3c9a0757c06efbf1fa7fcff6ef36
+  zipkin:
+    base-url: http://localhost:9411/
+    enabled: true
 
 eureka:
   instance:
