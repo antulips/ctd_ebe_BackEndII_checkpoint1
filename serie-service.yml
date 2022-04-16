@@ -1,5 +1,6 @@
 server:
   port : 8087
+  
 spring:
   data:
     mongodb:
@@ -7,11 +8,5 @@ spring:
 
 eureka:
   client:
-    fetchRegistry: true
-    registerWithEureka: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
-  instance:
-    preferIpAddress: true
-    id: ${spring.cloud.client.ip-address}:${server.port}
-    hostname: ${spring.cloud.client.ip-address}
