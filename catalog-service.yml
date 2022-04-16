@@ -13,17 +13,17 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  health:
-    circuitbreakers:
-      enabled: true
-  endpoint:
-    health:
-      show-details: always
+#management:
+ # endpoints:
+  #  web:
+   #   exposure:
+    #    include: '*'
+#  health:
+ #   circuitbreakers:
+  #    enabled: true
+#  endpoint:
+ #   health:
+  #    show-details: always
 
 #resilience4j:
   #circuitbreaker:
