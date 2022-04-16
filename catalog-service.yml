@@ -25,39 +25,39 @@ management:
     health:
       show-details: always
 
-#resilience4j:
-  #circuitbreaker:
-    #instances:
-      #movies:
-        #slidingWindowType: COUNT_Based
-        #slidingWindowSize: 3
-        #failureRateThreshold: 50
-        #waitDurationInOpenState: 10000
-       # permittedNumberOfCallsInHalfOpenState: 3
-        #registerHealthIndicator: true
-       # allowHealthIndicatorToFails: false
-       # automaticTransitionFromOpenToHalfOpenEnabled: true
-     # series:
-       # slidingWindowType: COUNT_Based
-      #  slidingWindowSize: 3
-      #  failureRateThreshold: 50
-       # waitDurationInOpenState: 10000
-       # permittedNumberOfCallsInHalfOpenState: 3
-       # registerHealthIndicator: true
-      #  allowHealthIndicatorToFails: false
-      #  automaticTransitionFromOpenToHalfOpenEnabled: true
- # retry:
-  #  instances:
-   #   movies:
-    #    waitDuration: 1000
-     #   maxAttempts: 3
-      #  retryExceptions:
-       #   - feign.FeignException$InternalServerError
- #     series:
-  #      waitDuration: 1000
-   #     maxAttempts: 3
-    #    retryExceptions:
-     #     - feign.FeignException$InternalServerError
+resilience4j:
+  circuitbreaker:
+    instances:
+      movies:
+        slidingWindowType: COUNT_Based
+        slidingWindowSize: 3
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+        permittedNumberOfCallsInHalfOpenState: 3
+        registerHealthIndicator: true
+        allowHealthIndicatorToFails: false
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+      series:
+        slidingWindowType: COUNT_Based
+        slidingWindowSize: 3
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10000
+        permittedNumberOfCallsInHalfOpenState: 3
+        registerHealthIndicator: true
+        allowHealthIndicatorToFails: false
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+  retry:
+    instances:
+      movies:
+        waitDuration: 1000
+        maxAttempts: 3
+        retryExceptions:
+          - feign.FeignException$InternalServerError
+      series:
+        waitDuration: 1000
+        maxAttempts: 3
+        retryExceptions:
+          - feign.FeignException$InternalServerError
 
 info:
   app:
