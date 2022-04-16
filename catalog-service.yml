@@ -59,11 +59,11 @@ management:
     #    retryExceptions:
      #     - feign.FeignException$InternalServerError
 
-#info:
- # app:
-  #  name: ${spring.application.name}
-   # version: 1.0.0
-    #description: Catalog Microservice For DHMax
-#  svc:
- #   intanceid: ${eureka.instance.instance-id}
-  #  port: ${server.port}
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    description: Catalog Microservice For DHMax
+  svc:
+    intanceid: ${eureka.instance.instance-id}
+    port: ${server.port}
