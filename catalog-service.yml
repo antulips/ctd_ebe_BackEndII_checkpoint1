@@ -18,7 +18,7 @@ queue:
   movie:
     name: movieQueue
   serie:
-    name: seriemovieQueue
+    name: serieQueue
   
 
 eureka:
