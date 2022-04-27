@@ -15,7 +15,7 @@ spring:
     port: 5672
 
 queue:
-  movie:
+  serie:
     name: serieQueue
 
 eureka:
