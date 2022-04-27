@@ -16,7 +16,10 @@ spring:
 
 queue:
   movie:
-    name: catalogQueue
+    name: movieQueue
+  serie:
+    name: seriemovieQueue
+  
 
 eureka:
   client:
