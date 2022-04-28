@@ -4,14 +4,14 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/DHMax
+      uri: mongodb://db-mongo:27017/DHMax
   zipkin:
-    base-url: http://localhost:9411/
+    base-url: http://zipkin:9411/
     enabled: true 
   rabbitmq:
     username: guest
     password: guest
-    host: localhost
+    host: rabbitmq
     port: 5672
 
 queue:
@@ -24,7 +24,7 @@ queue:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://service-registry:8761/eureka
     fetch-registry: true
     register-with-eureka: true
     
