@@ -8,17 +8,17 @@ spring:
           #uri: lb://movie-service
           uri: http://movie-service:8083
           predicates:
-            - Path=/**
+            - Path=/movie-service/**
         - id: serie-service
           #uri: lb://serie-service
           uri: http://serie-service:8087
           predicates:
-            - Path=/**
+            - Path=/serie-service/**
         - id: catalog-service
           #uri: lb://catalog-service
           uri: http://catalog-service:8081
           predicates:
-            - Path=/**
+            - Path=/catalog-service/**
           filters:           
       discovery:
         locator:
